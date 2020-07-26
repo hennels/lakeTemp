@@ -1,3 +1,4 @@
 theme: jekyll-theme-minimal
 title: Osakis Temperatures
 description: This website contains temperature readings from Osakis, MN. Temperature readings should be updated regularly.
+markdown: kramdown
