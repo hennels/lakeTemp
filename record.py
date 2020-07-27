@@ -21,7 +21,7 @@ if args.filename not in filenames:
     raise ValueError("Invalid filename")
 
 # intialize probes
-with sh.contrib.sudo(args.password, _with=True):
+with sh.contrib.sudo(password=args.password, _with=True):
         sh.modprobe("w1-gpio")
         sh.modprobe("w1-therm")
 
