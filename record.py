@@ -20,9 +20,6 @@ args = parser.parse_args()
 if args.filename not in filenames:
     raise ValueError("Invalid filename")
 
-# update repo
-sh.git.pull()
-
 # intialize probes
 with sh.contrib.sudo(args.password, _with=True):
         sh.modprobe("w1-gpio")
@@ -33,7 +30,10 @@ temperatures = tuple([misc_func.get_temp(sensors[probe]) for probe in filenames[
 
 # log it
 timestamp, line = misc_func.make_line(*temperatures)
-add_line_to_file_after(args.filename, line)
+misc_func.add_line_to_file_after(args.filename, line)
+
+# update repo
+sh.git.pull()
 
 # commit and push
 sh.git.add(args.filename)
