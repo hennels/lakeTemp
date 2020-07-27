@@ -7,8 +7,8 @@ Three different values are reported: bath, pipes, and crawlspace.
 - **Pipes** is the temperature of the water pump pipes.
 - **Crawlspace** is the ambient air temperature of the crawlspace below the water pump.
 
-
 ## Most Recent Data
 
 | Date | Time | Bath | Pipes | Crawlspace |
 | ---- | ---- | ---- | ----- |  --------  |
+| July 25, 2020  | now | 1 | 2 | 3 |
