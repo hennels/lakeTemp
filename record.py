@@ -1,6 +1,9 @@
+import os
 import argparse
 import sh
 import misc_func
+
+os.chdir("/home/pi/lakeTemp")
 
 sensors = {"aux_short1":"28-00000544fce0",
            "aux_long":"28-000005454e97",
@@ -17,7 +20,12 @@ parser.add_argument("password", help="Sudo password in plaintext.")
 args = parser.parse_args()
 
 # validate filename
-if args.filename not in filenames:
+filename = None
+for k in filenames.keys():
+    if args.filename.endswith(k):
+        filename = k
+        break
+if filename is None:
     raise ValueError("Invalid filename")
 
 # intialize probes
@@ -26,7 +34,7 @@ with sh.contrib.sudo(password=args.password, _with=True):
         sh.modprobe("w1-therm")
 
 # take temperature readings
-temperatures = tuple([misc_func.get_temp(sensors[probe]) for probe in filenames[args.filename]])
+temperatures = tuple([misc_func.get_temp(sensors[probe]) for probe in filenames[filename]])
 
 # log it
 timestamp, line = misc_func.make_line(*temperatures)
