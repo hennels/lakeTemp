@@ -3,7 +3,7 @@ import sh
 import misc_func
 
 sensors = {"aux_short1":"28-00000544fce0",
-           "aux_long":"28-000005454e97,
+           "aux_long":"28-000005454e97",
            "aux_short2":"28-0000054589c1",
            "std_inside":"28-000004fc7931",
            "std_outside":"28-000004fc8ae5"}
