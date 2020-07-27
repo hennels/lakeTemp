@@ -11,6 +11,7 @@ Three different values are reported: bath, pipes, and crawlspace.
 
 | Date | Time | Bath | Pipes | Crawlspace |
 | ---- | ---- | ---- | ----- |  --------  |
+| 07/27/2020 | 10:44 | 66.31 | 63.61 | 61.14 |
 | 07/27/2020 | 10:32 | 66.65 | 63.95 | 62.38 |
 | 07/27/2020 | 10:30 | 66.54 | 64.06 | 64.74 |
 | July 25, 2020  | now | 1 | 2 | 3 |
