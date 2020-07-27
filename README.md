@@ -1,10 +1,8 @@
+[**Home**](./index.html), [Standard](./STD.html), [Auxiliary](./AUX.html)
+
 ## Welcome to lakeTemp
 
-This site is a work in progress, please check back later.
+Two different temperature stations report data independantly, recording a total of five different measurements. Basic measurements can be found on the [standard](./STD.html) page, and measurements specific to the water pipes at the property can be found on the [auxiliary](./AUX.html) page. Each page has a more in depth
 
-## Most Recent
-
-| Date | Time | Outside | Inside | Bath | Pipes | Crawlspace |
-| ---- | ---- |  -----  | ------ | ---- | ----- |  --------  |
-| July 25, 2020  | now | 1 | 2 | 3 | 4 | 5 |
-| July 25, 2020  | earlier | 1 | 2 | 3 | 4 | 5 |
+## Historical Data
+We also have unformatted [historical data](./historical.txt). This file contains years of measurements but some values are missing.
