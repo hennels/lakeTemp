@@ -9,7 +9,7 @@ sensors = {"aux_short1":"28-00000544fce0",
            "std_outside":"28-000004fc8ae5"}
 
 filenames = {"STD.md":["std_outside", "std_inside"],
-             "AUX.md":["aux_short1", "aux_long", "aux_short2"]}
+             "AUX.md":["aux_short1", "aux_short2", "aux_long"]}
 
 parser = argparse.ArgumentParser()
 parser.add_argument("filename", help="File to update.")
@@ -32,11 +32,11 @@ temperatures = tuple([misc_func.get_temp(sensors[probe]) for probe in filenames[
 timestamp, line = misc_func.make_line(*temperatures)
 misc_func.add_line_to_file_after(args.filename, line)
 
-# update repo
-sh.git.pull()
-
-# commit and push
+# commit
 sh.git.add(args.filename)
 sh.git.commit("-m", timestamp)
+
+# update repo
+sh.git.pull()
 sh.git.push()
 
