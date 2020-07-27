@@ -9,7 +9,7 @@ def make_line(*temperatures):
     timestamp = dt.strftime("%Y-%m-%d_%H:%M:%S")
     for temp in temperatures:
         out = out + "| {:.2f} ".format(C2F(temp))
-    return timestamp, out + "|"
+    return timestamp, out + "|\n"
 
 def add_line_to_file_after(filename, add_line):
     with open(filename, "r") as f:
