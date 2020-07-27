@@ -28,6 +28,6 @@ def add_line_to_file_after(filename, add_line):
     return None
 
 def get_temp(probe):
-    with open("/sys/bus/w1/devices/{}/w1_slave") as f:
+    with open("/sys/bus/w1/devices/{}/w1_slave".format(probe)) as f:
         out = f.readlines()[1][29:]
     return int(out)/1000.0
