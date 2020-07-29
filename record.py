@@ -16,7 +16,6 @@ filenames = {"STD.md":["std_outside", "std_inside"],
 
 parser = argparse.ArgumentParser()
 parser.add_argument("filename", help="File to update.")
-parser.add_argument("password", help="Sudo password in plaintext.")
 args = parser.parse_args()
 
 # validate filename
@@ -27,24 +26,19 @@ for k in filenames.keys():
         break
 if filename is None:
     raise ValueError("Invalid filename")
-
-# intialize probes
-with sh.contrib.sudo(password=args.password, _with=True):
-        sh.modprobe("w1-gpio")
-        sh.modprobe("w1-therm")
+print("Validated")
 
 # take temperature readings
 temperatures = tuple([misc_func.get_temp(sensors[probe]) for probe in filenames[filename]])
+print("Got temps")
 
 # log it
 timestamp, line = misc_func.make_line(*temperatures)
 misc_func.add_line_to_file_after(args.filename, line)
+print("logged")
 
 # commit
 sh.git.add(args.filename)
 sh.git.commit("-m", timestamp)
-
-# update repo
-sh.git.pull()
-sh.git.push()
+print("committed")
 
