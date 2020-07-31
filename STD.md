@@ -11,5 +11,4 @@ Two different values are reported: Outside and Inside.
 | Date | Time | Outside | Inside |
 | ---- | ---- |  -----  | ------ |
 | 07/31/2020 | 18:27 | 77.67 | 185.00 |
-| July 25, 2020  | now | 1 | 2 |
-| July 25, 2020  | earlier | 1 | 2 |
+
