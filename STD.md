@@ -10,5 +10,6 @@ Two different values are reported: Outside and Inside.
 
 | Date | Time | Outside | Inside |
 | ---- | ---- |  -----  | ------ |
+| 07/31/2020 | 18:30 | 77.79 | 74.64 |
 | 07/31/2020 | 18:27 | 77.67 | 185.00 |
 
