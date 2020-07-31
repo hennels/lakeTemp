@@ -1,0 +1,7 @@
+#!/bin/bash
+/sbin/modprobe w1-gpio
+/sbin/modprobe w1-therm
+cd /home/pi/lakeTemp
+git pull
+/home/pi/.local/share/virtualenvs/lakeTemp-xOea6E2H/bin/python record.py STD.md
+git push
